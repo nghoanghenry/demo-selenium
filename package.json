@@ -1,0 +1,34 @@
+{
+  "name": "demo_selenium",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "data-driven": "node tests/data-driven.test.js",
+    "generate:users": "node tests/generate_random_users.js",
+    "test": "mocha tests/mocha-data-driven.test.js --timeout 120000 --reporter mochawesome --reporter-options reportDir=reports,reportFilename=test-report",
+    "test:chrome": "set \"BROWSER=chrome\" && npm run test",
+    "test:firefox": "set \"BROWSER=firefox\" && npm run test",
+    "test:edge": "set \"BROWSER=edge\" && npm run test",
+    "test:all-browsers": "npm run test:chrome && npm run test:firefox && npm run test:edge",
+    "test:headless": "set \"HEADLESS=true\" && npm run test",
+    "test:headless-chrome": "set \"BROWSER=chrome\" && set \"HEADLESS=true\" && npm run test",
+    "test:headless-firefox": "set \"BROWSER=firefox\" && set \"HEADLESS=true\" && npm run test",
+    "merge-reports": "mochawesome-merge reports/*.json > reports/merged-report.json && marge reports/merged-report.json --reportDir reports --inline"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@faker-js/faker": "^9.9.0",
+    "selenium-webdriver": "^4.33.0"
+  },
+  "devDependencies": {
+    "chai": "^5.2.1",
+    "chai-as-promised": "^8.0.1",
+    "mocha": "^11.7.1",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^5.0.0",
+    "mochawesome-report-generator": "^6.2.0"
+  }
+}
