@@ -266,7 +266,6 @@ npm run generate:users
 | `npm run test:fast` | Test nhanh với 1 user (headless) |
 | `npm run test:headless` | Test không hiển thị browser |
 | `npm run test:html` | Tạo báo cáo HTML |
-| `npm run test:allure` | Tạo báo cáo Allure |
 | `npm run generate:users` | Tạo dữ liệu test mới |
 
 ## 🔧 Tùy chỉnh nâng cao
@@ -278,14 +277,11 @@ node run-tests.js --browser firefox --users 5
 # Test headless với báo cáo JSON
 node run-tests.js --headless --reporter json --output results.json
 
-# Test full với 10 users và báo cáo Allure
-node run-tests.js --users 10 --reporter allure
 ```
 
 ## 📊 Xem báo cáo
 
 - **HTML Report:** Mở file `reports/test-report.html`
-- **Allure Report:** Chạy `npm run report:allure`
 - **JSON Results:** File `test-results.json`
 
 ## ⚡ Tips
